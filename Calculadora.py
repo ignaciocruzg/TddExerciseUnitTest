@@ -6,10 +6,10 @@ class Calculadora:
         return a - b
 
     def dividir(self, a, b):
-        if b == 0:
-            raise ErrorAlDividirEntreZero()
-        else:
+        try:
             return a / b
+        except Exception:
+            raise ErrorAlDividirEntreZero()
 
 
 class ErrorAlDividirEntreZero(Exception):
